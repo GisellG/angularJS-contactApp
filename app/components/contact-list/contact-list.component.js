@@ -5,19 +5,24 @@
         .module('contactApp')
         .component('contactList', {
             templateUrl: 'components/contact-list/contact-list.template.html',
-            controller: function ContactListController() {
-                this.contacts = [
-                    {
-                        name: 'Leanne Graham',
-                        email: 'Sincere@april.biz'
-                      }, {
-                        name: 'Ervin Howell',
-                        email: 'Shanna@melissa.tv'
-                      }, {
-                        name: 'Clementine Bauch',
-                        email: 'Nathan@yesenia.net'
-                      }
-                ];
-            }
+            controller: ['$http', function ContactListController($http) {              
+              
+                /* jshint validthis: true */
+                var vm = this;
+
+                vm.orderProp = 'id';
+
+                $http.get('https://jsonplaceholder.typicode.com/users')
+                  .then(function successCallback(response) {
+
+                    console.log(response);
+                    vm.contacts = response.data;
+
+                  }, function failedCallback(response) {
+                    console.error(response);
+                  })              
+
+            }],
+            controllerAs: 'vm'
         });
 })();

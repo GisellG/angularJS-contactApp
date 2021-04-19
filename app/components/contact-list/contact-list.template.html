@@ -3,16 +3,26 @@
         <div class="col-md-2">
             <!--Sidebar content-->
 
-            Search: <input ng-model="$ctrl.query" />
+            Search: <input ng-model="vm.query" />
 
         </div>
+
+        <p>
+            Sort by:
+            <select ng-model="vm.orderProp">
+                <option value="name">Alphabetical</option>
+                <option value="id">By ID</option>
+            </select>
+        </p>
+
         <div class="col-md-10">
             <!--Body content-->
 
             <ul>
-                <li ng-repeat="contact in $ctrl.contacts | filter:$ctrl.query">
+                <li ng-repeat="contact in vm.contacts | filter:vm.query | orderBy:vm.orderProp">
                     <span>{{contact.name}}</span>
                     <p>{{contact.email}}</p>
+                    <p>{{contact.address.city}}</p>
                 </li>
             </ul>
 
