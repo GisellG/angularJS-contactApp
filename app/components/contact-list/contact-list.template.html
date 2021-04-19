@@ -20,9 +20,11 @@
 
             <ul>
                 <li ng-repeat="contact in vm.contacts | filter:vm.query | orderBy:vm.orderProp">
-                    <span>{{contact.name}}</span>
+                    <a href="#!/contacts/{{contact.id}}">
+                        <img ng-src="{{contact.avatar}}" alt="{{contact.name}}">
+                    </a>
+                    <a href="#!/contacts/{{contact.id}}">{{contact.first_name}}{{contact.last_name}}</a>
                     <p>{{contact.email}}</p>
-                    <p>{{contact.address.city}}</p>
                 </li>
             </ul>
 

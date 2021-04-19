@@ -3,7 +3,8 @@
 
     angular
         .module('contactApp', [
-            'contactList'
+            'contactList',
+            'ui.router'
         ]);
 
 })();
