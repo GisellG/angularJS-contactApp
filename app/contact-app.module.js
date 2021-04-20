@@ -3,8 +3,9 @@
 
     angular
         .module('contactApp', [
-            'contactList',
-            'ui.router'
+            'ngRoute',
+            'contactDetail',
+            'contactList'
         ]);
 
 })();

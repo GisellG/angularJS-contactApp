@@ -13,12 +13,11 @@
       $http.get('https://reqres.in/api/users')
         .then(function successCallback(response) {
 
-          console.log(response.data.data);
           vm.contacts = response.data.data;
 
         }, function failedCallback(response) {
           console.error(response);
-        })              
+        });              
 
     };
 

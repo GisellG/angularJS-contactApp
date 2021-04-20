@@ -10,7 +10,8 @@
         <p>
             Sort by:
             <select ng-model="vm.orderProp">
-                <option value="name">Alphabetical</option>
+                <option value="first_name">By First</option>
+                <option value="last_name">By Last</option>
                 <option value="id">By ID</option>
             </select>
         </p>
@@ -23,7 +24,7 @@
                     <a href="#!/contacts/{{contact.id}}">
                         <img ng-src="{{contact.avatar}}" alt="{{contact.name}}">
                     </a>
-                    <a href="#!/contacts/{{contact.id}}">{{contact.first_name}}{{contact.last_name}}</a>
+                    <a href="#!/contacts/{{contact.id}}">{{contact.first_name}} {{contact.last_name}}</a>
                     <p>{{contact.email}}</p>
                 </li>
             </ul>
