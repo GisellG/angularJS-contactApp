@@ -11,8 +11,6 @@
         $http.get('https://reqres.in/api/users/' + $routeParams.contactId)
         .then(function successCallback(response) {
 
-            console.log(response.data.data);
-
             vm.contact = response.data.data;
 
         }, function failedCallback(response) {
